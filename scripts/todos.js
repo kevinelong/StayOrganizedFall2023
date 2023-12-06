@@ -2,11 +2,11 @@
 function todo(t) {
     // const completed = t.completed ? "[X]" : "[&nbsp;]";
     
-    let completed = "[&nbsp;]"
-    if(t.completed){
-        completed = "[X]"
-    }
-    
+    // let completed = "[&nbsp;]"
+    // if(t.completed){
+    //     completed = "[X]"
+    // }
+    const completed = `<img src="./images/check_box_${t.completed}.svg">Completed`
     return `
     <div class="todo card">
         <div class="id">        ${t.id}</div>
