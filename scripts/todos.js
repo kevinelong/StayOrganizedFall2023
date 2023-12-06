@@ -21,12 +21,8 @@ function todo(t) {
 }
 
 document.addEventListener("DOMContentLoaded", e => {
-
-    const userOption = u => `<option value="${u.id}">${u.name} - (${u.username})</option>`;
-
-    fetch("http://localhost:8083/api/users")
-        .then(r => r.json())
-        .then(users => users.forEach(u => userList.innerHTML += userOption(u)));
+    
+    fillUserList();
 
     userList.addEventListener("change", e => {
         fetch("http://localhost:8083/api/todos/")
