@@ -23,7 +23,7 @@
     <!-- <form action="http://localhost:8083/api/todos/" method="POST"> -->
 
 <!-- userid the user id, not the name -->
-<select id=userList name="userid">
+<select id="userList" name="userid">
     <option value="">Select a User</option>
 </select>
 
@@ -33,7 +33,7 @@
 </select>
 
 <!-- priority High, Medium, or Low -->
-<select name="priority">
+<select name="priority" id="priorityList">
     <option value="">Set Priority</option>
     <option value="High">  High</option>
     <option value="Medium">Medium</option>
@@ -49,7 +49,7 @@
 <!-- deadline any string, but preferred as YYYY-MM-DD -->
 <label>
     <h4>Deadline Date (YYYY-MM-DD)</h4>
-    <input type="text" placeholder="YYYY-MM-DD" name="deadline">
+    <input name="deadline" id="deadline" type="text" placeholder="YYYY-MM-DD">
 </label>
 <input type="submit" value="Save" id="saveButton" class="btn btn-success">
     <!-- </form> -->
