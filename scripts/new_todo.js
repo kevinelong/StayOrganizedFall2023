@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", e => {
 
     fillUserList();
 
-    const catOption = c => `<option value="${c.id}">${c.name}</option>`;
+    const catOption = c => `<option>${c.name}</option>`;
+    //REMOVE VALUE SO THE DISPLAY NAME WILL BE USED BY THE NEW TODO
+    // const catOption = c => `<option value="${c.id}">${c.name}</option>`;
 
     fetch("http://localhost:8083/api/categories")
         .then(r => r.json())
