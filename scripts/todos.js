@@ -19,7 +19,7 @@ function todo(t) {
     `;
 }
 function draw() {
-    fetch(host + "/api/users/api/todos/")
+    fetch(host + "/api/todos/")
         .then(r => r.json())
         .then(todos => {
             todoList.innerHTML = todos.filter(t => t.userid == userList.value).map(todo).join("");
