@@ -18,9 +18,8 @@ function todo(t) {
     </div>
     `;
 }
-
 function draw() {
-    fetch("http://localhost:8083/api/todos/")
+    fetch(host + "/api/users/api/todos/")
         .then(r => r.json())
         .then(todos => {
             todoList.innerHTML = todos.filter(t => t.userid == userList.value).map(todo).join("");
@@ -28,7 +27,7 @@ function draw() {
 }
 
 function mark(id) {
-    fetch("http://localhost:8083/api/todos/" + id, { method: "PUT" }).then(draw);
+    fetch(host + "/api/todos/" + id, { method: "PUT" }).then(draw);
 }
 
 

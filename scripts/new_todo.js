@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", e => {
     //REMOVE VALUE SO THE DISPLAY NAME WILL BE USED BY THE NEW TODO
     // const catOption = c => `<option value="${c.id}">${c.name}</option>`;
 
-    fetch("http://localhost:8083/api/categories")
+    fetch( host + "/api/categories")
         .then(r => r.json())
         .then(cats => cats.forEach(c => catList.innerHTML += catOption(c)));
 
@@ -29,13 +29,13 @@ document.addEventListener("DOMContentLoaded", e => {
         // console.log(content)
         //// FormData() NOT WORKING WITH ANY OR NONE FOR CONTENT TYPE
 
-        fetch("http://localhost:8083/api/todos/", {
+        fetch(host + "/api/todos/", {
             method: "POST", body: content,
             headers: {
                 "Content-type": "application/x-www-form-urlencoded" //"application/json"
             }
         }).then(r => {
-            location="http://localhost:3000/todos.html"
+            location="/todos.html"
         });
 
     }); //END SAVE

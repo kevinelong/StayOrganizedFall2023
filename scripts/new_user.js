@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", e => {
 
     saveButton.addEventListener("click", e => {
 
-        if(passwordInput.value != repeatPassword.value){
+        if (passwordInput.value != repeatPassword.value) {
             alert("Passwords do not match");
             return; //EXIT FUNCTION
         }
@@ -11,13 +11,13 @@ document.addEventListener("DOMContentLoaded", e => {
         const elements = document.querySelectorAll("main [name]");
         const content = [...elements].map(e => `${encodeURIComponent(e.name)}=${encodeURIComponent(e.value)}`).join("&");
 
-        fetch("http://localhost:8083/api/users/", {
+        fetch(host + "/api/users/", {
             method: "POST", body: content,
             headers: {
                 "Content-type": "application/x-www-form-urlencoded" //"application/json"
             }
         }).then(r => {
-            location="http://localhost:3000/index.html"
+            location = "index.html"
         });
 
     }); //END SAVE
